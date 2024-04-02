@@ -1,4 +1,4 @@
-### Galutine praktine uzduotis
+# Galutine praktine uzduotis
 
 Uzduotis studentams kurie mokesi HTML, CSS, Javascript, Express, Mysql, React, Tailwind.
 
@@ -79,6 +79,7 @@ Backend dalis bus kuriama naudojant Express.js, Mysql.
 1. POST /api/auth/register - registruoja nauja vartotoja
 2. POST /api/auth/login - prisijungia vartotoja
    Slaptazodziai turetu buti saugomi hashuotu formatu. Brcypt arba kitu biblioteku pagalba.
+3. PUT /api/auth/user/:id - atnaujina vartotojo informacija
 
 #### Miestu Routes
 
@@ -97,7 +98,7 @@ Bet koks kitas route turetu grazinti 404 statusa json formatu.
 
 ### Middleware
 
-1. Post, Put requestu validacijai sukurkite middleware. Tikriname ar visi laukai yra uzpildyti ir ar jie atitinka reikalavimus.
+1. Post, Put requestu validacijai sukurkite middleware. Tikriname ar visi laukai yra uzpildyti ir ar jie atitinka reikalavimus. Jei nepavyks su middleware, galite naudoti paprasta if salyga.
 
 ---
 
@@ -165,6 +166,11 @@ Category ir town turetu buti select input ar kitaip apibrezti visus miestus ir k
 - pasikartojantis html kodas turetu buti iskeliamas i atskirus komponentus ir/arba generuojamas ciklo pabalba.
 - Stengtis laikyts react geru praktiku.
 - Prisijungus, istrynus skebima ar kitoki veiksma atlikus vykdome automatini perejima i kita atitinkama puslapi.
+
+### Apsaugoti routes
+
+- Apsaugoti routes kurie turi buti pasiekiami tik prisijungusiems vartotojams.
+- Routes pasiekiamumas turi buti logiskas. Pvz. vartotojas negali pasiekti login puslapi jei jis jau prisijunges. Vartotojas negali pasiekti user/:id puslapi jei jis nera prisijunges. ir pan.
 
 ### Formos
 
